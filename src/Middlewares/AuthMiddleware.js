@@ -1,10 +1,12 @@
-export async function authValidation(req, res, next) {
+import db from '../config/database.connection.js'
+
+export async function AuthMiddleware(req, res, next) {
     const token = req.headers.authorization?.replace('Bearer ', '');
-    if (!token) return res.status(422).send("Faltou o token meu cria!");
+    if (!token) return res.status(401).send();
 
     try {
-        const session = await db.collection("sessions").findOne({ token });
-        if (!session) return res.status(401).send("Tu não tem autoridade suficiente fi!");
+        const session = await db.query(`SELECT FROM sessions WHERE token=$1`,token);
+        if (!session) return res.status(401).send("");
 
         res.locals.session = session;
 

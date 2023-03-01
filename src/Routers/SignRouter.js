@@ -9,6 +9,6 @@ import { signupSchema } from "../Models/SignupSchema.js";
 const router = Router();
 
 router.post('/signup',ValidateMiddleware(signupSchema),signUp);
-router.get('/signin',ValidateMiddleware(signinSchema), signIn);
+router.post('/signin',ValidateMiddleware(signinSchema), signIn);
 
 export default router;
