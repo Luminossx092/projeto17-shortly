@@ -1,1 +1,0 @@
-# projeto17-shortly
