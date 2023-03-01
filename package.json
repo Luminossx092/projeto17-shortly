@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node ./src/index.js",
-		"dev": "npx nodemon ./src/index.js",
+    "dev": "npx nodemon ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,11 +21,14 @@
   },
   "homepage": "https://github.com/Luminossx092/projeto17-shortly#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "joi": "^17.8.3",
     "node": "^19.6.1",
     "nodemon": "^2.0.20",
-    "pg": "^8.9.0"
+    "pg": "^8.9.0",
+    "uuid": "^9.0.0"
   }
 }
