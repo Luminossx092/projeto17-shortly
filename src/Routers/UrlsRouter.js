@@ -1,9 +1,8 @@
 import { Router } from "express";
-import { DeleteUrl, GetUrlById, GetUrlByShortUrl, UrlShorten } from "../Controllers/UrlController";
-import { AuthMiddleware } from "../Middlewares/AuthMiddleware";
-import { ValidateMiddleware } from "../Middlewares/ValidateMiddleware";
-import { UrlGetSchema } from "../Models/UrlGetSchema";
-import { UrlShortenSchema } from "../Models/UrlShortenSchema";
+import { DeleteUrl, GetUrlById, GetUrlByShortUrl, UrlShorten } from "../Controllers/UrlController.js";
+import { AuthMiddleware } from "../Middlewares/AuthMiddleware.js";
+import { ValidateMiddleware } from "../Middlewares/ValidateMiddleware.js";
+import { UrlShortenSchema } from "../Models/UrlShortenSchema.js";
 
 //import { AddCustomer, GetCustomer, ListCustomers, UpdateCustomer } from "../controllers/CustomersController.js";
 //import { CustomerFormatMiddleware } from "../middlewares/CustomersMiddleware.js";

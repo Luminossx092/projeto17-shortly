@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { GetRanking, GetUserInfo } from "../Controllers/UsersController";
-import { AuthMiddleware } from "../Middlewares/AuthMiddleware";
+import { GetRanking, GetUserInfo } from "../Controllers/UsersController.js";
+import { AuthMiddleware } from "../Middlewares/AuthMiddleware.js";
 
 const router = Router();
 
