@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid'
 export async function signIn(req, res) {
     const { email, password } = req.body;
     const user = await db.query("SELECT * FROM users WHERE email = $1",[email]);
-    if (user && bcrypt.compareSync(password, user.rows[0].password)) {
+    if (user.rowCount>0 && bcrypt.compareSync(password, user.rows[0].password)) {
         let token;
         const session = await db.query(`SELECT * FROM sessions WHERE "userId"=$1`,[user.rows[0].id]);
         if (session.rowCount>0) {

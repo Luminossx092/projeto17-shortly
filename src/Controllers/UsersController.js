@@ -4,7 +4,7 @@ export async function GetUserInfo(req, res) {
     const {userId} = res.locals?.session;
     console.log(userId)
     try {
-        const temp = await db.query(`SELECT users.id as id, users.name as name,SUM(urls."visualizationCount") as visitCount
+        const temp = await db.query(`SELECT users.id as id, users.name as name,SUM(urls."visualizationCount") as "visitCount"
         FROM users 
         JOIN urls 
         ON urls."userId"=users.id 
