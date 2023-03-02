@@ -28,7 +28,7 @@ CREATE TABLE public.sessions (
     id integer NOT NULL,
     token text NOT NULL,
     "userId" integer NOT NULL,
-    "createAt" date DEFAULT CURRENT_DATE
+    "createdAt" timestamp without time zone DEFAULT now()
 );
 
 
@@ -62,7 +62,7 @@ CREATE TABLE public.urls (
     "shortUrl" character varying(10) NOT NULL,
     url text NOT NULL,
     "visualizationCount" integer DEFAULT 0,
-    "createAt" date DEFAULT CURRENT_DATE
+    "createdAt" timestamp without time zone DEFAULT now()
 );
 
 
@@ -94,7 +94,8 @@ CREATE TABLE public.users (
     id integer NOT NULL,
     name character varying(100) NOT NULL,
     email character varying(100) NOT NULL,
-    password text NOT NULL
+    password text NOT NULL,
+    "createdAt" timestamp without time zone DEFAULT now()
 );
 
 
